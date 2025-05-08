@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face & Emotion Detector</title>
+</head>
+<body>
+    <h1>Upload a Face Image</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if result %}
+        <h2>Result:</h2>
+        {% if result.error %}
+            <p style="color:red;">Error: {{ result.error }}</p>
+        {% else %}
+            <img src="{{ image_path }}" width="300"><br>
+            <p><strong>Emotion:</strong> {{ result.emotion }}</p>
+            <p><strong>Age:</strong> {{ result.age }}</p>
+            <p><strong>Gender:</strong> {{ result.gender }}</p>
+            <p><strong>Race:</strong> {{ result.race }}</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
