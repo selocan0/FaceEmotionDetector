@@ -16,7 +16,7 @@ gast==0.4.0
 gdown==5.2.0
 git-filter-repo==2.47.0
 google-auth==2.40.1
-google-auth-oauthlib==0.5.2
+google-auth-oauthlib>=0.5.2
 google-pasta==0.2.0
 grpcio==1.71.0
 gunicorn==23.0.0
@@ -44,7 +44,7 @@ optree==0.15.0
 packaging==25.0
 pandas==1.5.3
 pillow==11.2.1
-protobuf==3.20.3
+protobuf>=3.20.3
 pyasn1==0.6.1
 pyasn1_modules==0.4.2
 Pygments==2.19.1
@@ -63,7 +63,7 @@ tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
 tensorflow-estimator==2.10.0
 tensorflow-io-gcs-filesystem==0.37.1
-tensorflow==2.19.0
+tensorflow>=2.13.0
 termcolor==3.1.0
 tqdm==4.67.1
 typing_extensions==4.13.2
