@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0, './patched_deepface')  # 👈 makes sure we use your custom DeepFace
+
 from flask import Flask, render_template, request
 from deepface import DeepFace
 import os
