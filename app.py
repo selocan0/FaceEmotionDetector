@@ -25,7 +25,7 @@ def index():
                 try:
                     analysis = DeepFace.analyze(
                         img_path=filepath,
-                        actions=["emotion", "age", "gender", "race"],
+                        actions=["emotion", "gender"],
                         detector_backend="retinaface",
                         enforce_detection=False
                     )
