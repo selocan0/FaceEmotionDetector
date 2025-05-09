@@ -25,7 +25,7 @@ def index():
                 try:
                     analysis = DeepFace.analyze(
                         img_path=filepath,
-                        actions=["emotion", "gender"],
+                        actions=["emotion"],
                         detector_backend="opencv",
                         enforce_detection=False
                     )
