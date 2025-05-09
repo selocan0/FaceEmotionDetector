@@ -29,12 +29,8 @@ def index():
                         detector_backend="opencv",
                         enforce_detection=False
                     )
-
                     result = {
-                        "age": analysis[0]["age"],
-                        "gender": analysis[0]["dominant_gender"],
-                        "emotion": analysis[0]["dominant_emotion"],
-                        "race": analysis[0]["dominant_race"]
+                        "emotion": analysis[0]["dominant_emotion"]
                     }
 
                 except Exception as e:
