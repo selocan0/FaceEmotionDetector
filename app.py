@@ -23,18 +23,26 @@ def index():
                 file.save(filepath)
 
                 try:
-                    result = DeepFace.analyze(
+                    analysis = DeepFace.analyze(
                         img_path=filepath,
                         actions=["emotion", "age", "gender", "race"],
-                        detector_backend="opencv",
+                        detector_backend="retinaface",
                         enforce_detection=False
                     )
+
+                    result = {
+                        "age": analysis[0]["age"],
+                        "gender": analysis[0]["dominant_gender"],
+                        "emotion": analysis[0]["dominant_emotion"],
+                        "race": analysis[0]["dominant_race"]
+                    }
+
                 except Exception as e:
                     error = f"❌ Analysis failed: {str(e)}"
 
     return render_template("index.html", result=result, error=error)
 
-# ✅ Correct startup for Render deployment
+# ✅ Render-compatible run block
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)

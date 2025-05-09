@@ -13,7 +13,12 @@
 
     {% if result %}
         <h2>Analysis Result</h2>
-        <pre>{{ result | tojson(indent=2) }}</pre>
+        <ul>
+            <li><strong>Age:</strong> {{ result.age }}</li>
+            <li><strong>Gender:</strong> {{ result.gender }}</li>
+            <li><strong>Emotion:</strong> {{ result.emotion }}</li>
+            <li><strong>Race:</strong> {{ result.race }}</li>
+        </ul>
     {% endif %}
 
     {% if error %}
