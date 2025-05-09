@@ -26,7 +26,7 @@ def index():
                     result = DeepFace.analyze(
                         img_path=filepath,
                         actions=["emotion", "age", "gender", "race"],
-                        detector_backend="retinaface",
+                        detector_backend="opencv",
                         enforce_detection=False
                     )
                 except Exception as e:
